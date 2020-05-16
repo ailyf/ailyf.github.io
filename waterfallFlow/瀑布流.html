@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瀑布流</title>
+    <style>
+        body{
+            margin: 0 auto;
+        }
+        .container{
+            position: relative;
+        }
+        .box{
+            /* position: absolute; */
+            padding: 5px;
+            float: left;
+        }
+        .img-box{
+            padding: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-shadow: 0 0 4px 1px #cccccc;
+        }
+        .img-box>img{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/1.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/9.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/2.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/3.jpg" alt="">
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/8.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/6.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/0.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/7.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/10.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/8.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/6.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/0.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/7.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/10.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/6.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/0.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/7.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/10.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/3.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/4.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/6.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/0.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/7.jpg" alt="">
+            </div>
+        </div>
+        <div class="box">
+            <div class="img-box">
+                <img src="./img/10.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $(function(){
+            //懒加载时使用的数据
+            var imgData = {"data":[{"src":"./img/0.jpg"},{"src":"./img/1.jpg"},{"src":"./img/2.jpg"},{"src":"./img/3.jpg"},{"src":"./img/4.jpg"},{"src":"./img/5.jpg"},{"src":"./img/6.jpg"},{"src":"./img/7.jpg"},{"src":"./img/8.jpg"},{"src":"./img/9.jpg"},{"src":"./img/10.jpg"},]}
+
+            function get(){
+
+                //获取整个页面的宽度
+                var windowWidth = $(window).width();
+
+                //获取一张图片的宽度
+                var imgWidth = $('.box').outerWidth();
+                
+                //每排可以摆放的图片数
+                var num = Math.floor(windowWidth / imgWidth);
+                
+                //使图片居中排列
+                $('.container').css({
+                    width:imgWidth * num + 'px',
+                    margin: '0 auto'
+                })
+            
+                //获取每排中最小的高度
+                var imgHeightArr = [];
+                $('.box').each(function(index,value){
+                    if(index < num){
+                        imgHeightArr[index] = $(this).outerHeight(); 
+                    }else{
+                        var minHeight = Math.min.apply(null,imgHeightArr);
+                        var imgLeft=0;
+                        for(var i=0;i<imgHeightArr.length;i++){
+                            if(imgHeightArr[i] == minHeight){
+                                imgLeft = $('.box')[i].offsetLeft;
+                                imgHeightArr[i] = imgHeightArr[i] + $(this).outerHeight();
+                            }
+                        }
+                        $(this).css({
+                            position: 'absolute',
+                            top:minHeight+'px',
+                            left:imgLeft
+                        }) 
+                    }             
+                })
+            }
+            get();
+
+            //懒加载图片
+            var timers = [];
+            
+            $(window).on('scroll',function(){
+
+                var timer = setTimeout(function(){
+
+                    //最后一张图片距离可视区域的高度
+                    var top = $('.box:last-child')[0].getBoundingClientRect().top;
+                    if(top < innerHeight){
+                        for(var i=0;i<imgData.data.length;i++){
+                            var newImg = $('<div class="box"><div class="img-box"><img src="'+imgData.data[i].src+'" alt=""></div></div>');
+                            $('.container').append(newImg);
+                        }
+                    } 
+                    get();
+                    for (var i = 1; i < timers.length; i++) {
+                        //清除定时器
+                        clearTimeout(timers[i]);
+                    }
+                    timers = [];  
+                }) 
+                timers.push(timer);
+            })          
+        })
+    </script>
+</body>
+</html>
