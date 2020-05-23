@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <title>移动端天气</title>
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <div class="weather">
+        <div class="system"></div>
+        <div class="weather-box">
+            <!-- 城市 -->
+            <div class="weather-city">
+                <div class="bottom">
+                    <div class="area"></div>
+                    <span class="search a1">+</span>
+                </div>
+                
+                <div class="pre">
+                    <div class="search-box">
+                        <input type="text" class="ipt" placeholder="输入城市名称">
+                        <div class="big"><img src="./img/big.png" class="auto-img"></div>
+                    </div>
+                    <span class="search a2">×</span>
+                </div>
+            </div>
+
+            <!-- 温度 -->
+            <div class="tem-box">
+                <div class="all">
+                    <div class="tem"></div>
+                    <div class="status"><span class="status-l"></span>&nbsp;&nbsp;<span class="status-r"></span> </div>
+                </div>
+            </div>
+
+            <!-- 时刻 -->
+            <div class="hours-tem-box">
+                <div class="all-hours">
+
+                </div>
+            </div>
+
+            <!-- 天 -->
+            <div class="day-box">
+               
+            </div>
+        </div>
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/rem.js"></script>
+        <script src="./js/index.js"></script>
+</body>
+
+</html>

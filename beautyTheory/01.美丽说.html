@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>美丽说</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/animated_scroll.js"></script>
+    <script src="js/animated.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .w{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        input{
+            outline:medium;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #666666;
+        }
+        a:hover{
+            color: #ff3366;
+        }
+        body{
+            color: #666666;
+            font-size: 12px;
+        }
+        .fl{
+            float: left;
+        }
+        .fr{
+            float: right;
+        }
+        @font-face {
+            font-family: 'iconfont';
+            src: url('fonts/iconfont.eot');
+            src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('fonts/iconfont.woff2') format('woff2'),
+            url('fonts/iconfont.woff') format('woff'),
+            url('fonts/iconfont.ttf') format('truetype'),
+            url('fonts/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    /*----header开始-----*/
+        .header{
+            height: 30px;
+            background: #f8f8f8;
+        }
+        .header .w .nav ul li{
+            float: left;
+            line-height: 30px;
+        }
+        .header .w .nav ul li a{
+            padding-right: 20px;
+            padding-left: 18px;
+            font-size: 12px;
+            border-right: 1px dotted #cccccc;
+        }
+        .header .w .nav ul li .last{
+                border-left: 1px dotted #cccccc;
+                border-right: none;
+        }
+        .header .w .nav ul li a span{
+            display: inline-block;
+            height: 18px;
+            width: 20px;
+            vertical-align: text-bottom;
+            /*padding-left: 4px;*/
+            margin-right: 8px;
+            background: url(images/top_nav.png) no-repeat;
+        }
+        .header .w .nav ul li a .wei{
+            background-position: -24px top;
+        }
+        .header .w .nav ul li a .qq{
+            background-position: -52px top;
+        }
+        .header .w .nav ul li a .star{
+            background-position: -76px top;
+        }
+        .header .w .nav ul li a .che{
+            background-position: -101px top;
+        }
+        .header .w .nav ul li a .item{
+            background-position: -129px top;
+        }
+        .header .w .nav ul li a  .help{
+            background-position: -178px top;
+            width: 8px;
+            height: 17px;
+            margin-left: 6px;
+            margin-right: 0;
+            box-sizing: border-box;
+        }
+        .header .w .nav ul .drop{
+            position: relative;
+        }
+        .header .w .nav ul .drop:hover .down{
+            display: block;
+        }
+        .header .w .nav ul li .down{
+            width: 87px;
+            /*height: 53px;*/
+            background: #f8f8f8;
+            border: 1px solid #f1f1f1;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 30px;
+        }
+        .header .w .nav ul li .down a{
+            padding-left:20px;
+            padding-right: 0;
+            border: none;
+            line-height:21px;
+            display: block;
+        }
+    /*----header结束-----*/
+    /*----content开始-----*/
+        .content{
+            height: 173px;
+            box-sizing: border-box;
+            /*background: red;*/
+        }
+        .content .logo h1 a{
+            background: url(images/logo.png) no-repeat;
+            background-size: auto 52px;
+            font-size: 0;
+            width: 176px;
+            height: 52px;
+            display: block;
+            margin-top: 40px;
+            margin-right: 185px;
+        }
+        .content .search {
+            margin-top: 20px;
+            width: 520px;
+            /*background: pink;*/
+        }
+        .content .search .top{
+            height: 24px;
+        }
+        .content .search .top span{
+            width: 60px;
+            height: 24px;
+            display: inline-block;
+            text-align: center;
+            float: left;
+            background: #f2f2f2;
+            cursor: pointer;
+            line-height: 24px;
+        }
+        /* .content .search .top span:first-child{
+            color: #fff2f5;
+            background: #ff3366;
+        } */
+        .content .search .top span.current{
+            color: #fff2f5;
+            background: #ff3366;
+        }
+        .content .search .middle input{
+            width: 445px;
+            height: 28px;
+            float: left;
+            border: 2px solid #ff3366;
+        }
+        .content .search .middle span{
+            width: 71px;
+            height: 32px;
+            background: #ff3366;
+            float: left;
+            display: inline-block;
+            background: #ff3366 url(images/fangdajing.png) no-repeat center center;
+            cursor: pointer;
+        }
+        .content .search .bottom ul li{
+            float: left;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .content .search .bottom ul .red{
+            color: #ff3366;
+        }
+        .content .search .bottom ul li:last-child{
+            margin-right: 0;
+        }
+    /*----content结束-----*/
+    /*----main_nav开始-----*/
+        .main_nav{
+            height: 30px;
+            border-bottom:1px solid #dedede;
+            font-size:16px;
+        }
+        .main_nav ul li {
+            float: left;
+            margin-right: 75px;
+        }
+        .main_nav ul li:last-child{
+            margin-right: 0;
+        }
+        .main_nav ul li:first-child{
+            border-bottom: 2px solid red;
+            padding-bottom: 7px;
+        }
+        .main_nav ul li:first-child a{
+            color:#f36;
+        }
+        .main_nav ul li:hover{
+            border-bottom: 2px solid red;
+            padding-bottom: 7px;
+        }
+        .main_nav ul li:hover a{
+            color:#f36;
+        }
+        .main_nav ul li a{
+            color:#333333;
+            font-weight: 700;
+        }
+    /*----main_nav结束-----*/
+     /*----banner开始-----*/
+        .banner{
+            height: 400px;
+            width: 1200px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            /* background: url(images/banner06.jpg) no-repeat; */
+        }
+        .banner>img{
+            cursor: pointer;
+            display: none;
+            z-index: 99;
+        }
+        .banner>img:first-child{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -22px;
+        }
+        .banner>img:nth-child(2){
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -22px;
+        }
+        .banner .ul1{
+            width: 600%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .banner .ul1 li{
+            float: left;
+        }
+        .banner .ul2{
+            /* width: 122px; */
+            /* height: 12px; */
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+        .banner .ul2 li{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.7);
+            float: left;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+        .banner .ul2 li:last-child{
+            margin-right: 0;
+        }
+        .banner .ul2 li.now{
+            width: 22px;
+            border-radius: 5px;
+        }
+     /*----banner结束-----*/
+     /*----banner_bottom开始-----*/
+        .banner_bottom{
+            height: 170px;
+            margin-bottom: 50px;
+        }
+        .banner_bottom ul li{
+            float: left;
+        }
+        .banner_bottom ul li img{
+            height: 100%;
+            width: 300px;
+        }
+     /*----banner_bottom结束-----*/
+     /*----picture开始-----*/
+        .picture{
+            overflow: hidden;
+        }
+        .picture .title{
+            height: 33px;
+            /*background: skyblue;*/
+            line-height: 33px;
+        }
+        .picture .title .title_l .fr{
+            color: #666666;
+            font-size: 14px;
+        }
+        .picture .title .title_l{
+            height: 33px;
+            width: 100%;
+            text-align: center;
+        }
+        .picture .title .title_l a{
+            font-size: 20px;
+            color: #000000;
+        }
+        /* .picture .title .title_l a:first-child span{
+            border-bottom: 2px solid #e60045;
+            padding-bottom: 5px;
+        } */
+        .picture .title .title_l a:first-child{
+            /* color: #e60045; */
+            margin-right: 36px;
+        }
+        .picture .title .title_l a:hover {
+            color:#e60045 ;
+        }
+        .picture .title .title_l a:hover span{
+            border-bottom: 2px solid #e60045;
+            padding-bottom: 5px;
+        }
+        .currentSpan{
+            border-bottom: 2px solid #e60045;
+            padding-bottom: 5px;
+        }
+        .picture .title .title_l a.currentA{
+            color:#e60045 ;
+        }
+        .picture .big ul{
+            margin-top: 17px;
+        }
+        .picture .big ul li{
+            width: 225px;
+            height: 400px;
+            /*background:skyblue;*/
+            float: left;
+            margin-right: 18px;
+        }
+        .picture  .big ul li:nth-child(5n){
+            margin-right: 0;
+        }
+        .picture  .big ul li:nth-child(n+6){
+            margin-top: 4px;
+        }
+        .picture .big ul li a img{
+            width: 225px;
+            height: 340px;
+        }
+        .picture .info{
+            height: 20px;
+            font-size: 14px;
+            color: #ff3366;
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+        .picture .info .collent{
+            color: #999999;
+        }
+        .picture .info .price::before{
+            content: '¥';
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        .picture .info .collent::before{
+            content: '';
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            background:  url(images/wjx.png) no-repeat;
+            background-size:15px 15px ;
+            margin-right: 5px;
+        }
+        .picture .desc{
+            white-space: nowrap;  /*让文本在一行显示，不换行*/
+            overflow: hidden; /*隐藏文本溢出的部分*/
+            text-overflow: ellipsis; /*将溢出的部分以省略号替代*/
+            color: #666666;
+            font-size: 14px;
+        }
+        .picture .desc::before{
+            content: '';
+            display: inline-block;
+            width: 38px;
+            height: 17px;
+            background: url(images/youxuan.png) no-repeat;
+            background-size: 38px auto;
+            vertical-align: -3px;
+        }
+        /*----picture结束-----*/
+        /*----picture1开始-----*/
+        .picture1{
+            overflow: hidden;
+        }
+        .picture1 .title_hao{
+            height: 22px;
+            line-height: 22px;
+            margin-top: 48px;
+            margin-bottom: 26px;
+            /*background: skyblue;*/
+        }
+        .picture1 .title_hao h2{
+            font-size: 22px;
+            color: #666666;
+        }
+        .picture1 .title_hao .fr{
+            font-size: 14px;
+            color: #666666;
+        }
+        .picture1 .title_hao .fr:hover{
+            color: #f36;
+        }
+        .picture1 ul li{
+            width: 390px;
+            height: 400px;
+            /*background: red;*/
+            float: left;
+            border: 1px solid #eeeeee;
+            position: relative;
+        }
+        .picture1 ul li:nth-child(2){
+            margin-right: 12px;
+            margin-left: 12px;
+        }
+        .picture1 ul li a .big{
+            width: 390px;
+            height: 210px;
+        }
+        .picture1 ul li a .mark{
+            background: url(images/shadow.png) no-repeat;
+            width: 390px;
+            height: 105px;
+            line-height: 105px;
+            color: #ffffff;
+            font-size: 18px;
+            position: absolute;
+            text-align: center;
+            bottom: 190px;
+            left: 0;
+        }
+        .picture1 ul li a .mark::after{
+            content: '';
+            width: 0;
+            font-size: 0;
+            display: inline-block;
+            border-top:4px solid transparent;
+            border-bottom:4px solid transparent;
+            border-left:4px solid white;
+            border-right:4px solid transparent;
+            margin-left: 8px;
+            margin-bottom: 2px;
+        }
+        .picture1 ul li a .small{
+            width: 114px;
+            height: 136px;
+            color: #666666;
+        }
+        .picture1 ul li a span::before{
+            content: '¥';
+        }
+        .picture1 ul li a:nth-child(n+2){
+            height: 174px;
+            width: 114px;
+            margin-top: 16px;
+            margin-left: 6px;
+            margin-right: 6px;
+            text-align: center;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+        /*----picture1结束-----*/
+        /*----footer开始-----*/
+        .footer{
+            margin-top: 30px;
+            height: 300px;
+            background: #f5f5f5;
+            color: #666666;
+        }
+        .footer .footer_top{
+            height: 234px;
+            border-bottom: 1px solid #dddddd;
+            border-top: 1px solid #dddddd;
+        }
+        .footer .footer_top .footer_l dl{
+            float: left;
+            margin-right: 105px;
+            margin-top: 40px;
+        }
+        .footer .footer_top .footer_l dl dt{
+            margin-bottom: 20px;
+        }
+        .footer .footer_top .footer_l dl dd {
+            margin-bottom: 22px;
+        }
+        .footer .footer_top .footer_l .xl span{
+            background: url(images/footer-icon.png) 0 0 no-repeat;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: -6px;
+            margin-right: 5px;
+        }
+        .footer .footer_top .footer_l .qq span{
+            background: url(images/footer-icon.png) -27px top no-repeat;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: -6px;
+            margin-right: 5px;
+        }
+        .footer .footer_top .footer_l .tx span{
+            background: url(images/footer-icon.png) -55px top no-repeat;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            vertical-align: -6px;
+            margin-right: 5px;
+        }
+        .footer .footer_top .footer_r{
+            margin-top: 30px;
+        }
+        .footer .footer_top .footer_r .tu1{
+            margin-left: 120px;
+            margin-right: 60px;
+        }
+        .footer .footer_top .footer_r h2{
+            margin-bottom: 22px;
+        }
+        .footer .footer_top .footer_r img{
+            padding-left: 16px;
+        }
+        .footer .footer_bottom{
+            text-align: center;
+            padding-top: 4px;
+        }
+        .footer .footer_bottom p{
+            line-height: 26px;
+        }
+        /*----footer结束-----*/
+
+        .slider{
+            height: 100%;
+            width: 38px;
+            padding-top: 62px;
+            position: fixed;
+            right: 0;
+            top: 0;
+            border-left:1px solid #dddddd;
+            background: #f6f6f6;
+            font-size:14px;
+        }  
+        .slider ul li{
+            border-top: 1px solid #dddddd;
+            cursor: pointer;
+        }
+        .slider ul li:hover{
+            background: #f36;
+        }
+        .slider ul li:hover a{
+            color: white;
+        }
+        .slider ul li a{
+            width: 14px;
+            font-size: 14px;
+            display:inline-block;
+            margin: 13px;
+        }
+        .slider ul li .app{
+            transform: rotate(90deg);
+        }
+        .slider ul li:first-child{
+            position: relative;
+        }
+        .slider ul li:first-child:hover{
+            height: 102px;
+        }
+        .slider ul li:first-child:hover .ewm{
+            display: block;
+        }
+        .slider ul li .ewm{
+            display: none;
+        }
+        .slider ul li .ewm a img{
+            position: absolute;
+            left:-170px;
+            top: 0px;
+            border: 1px solid #dddddd;
+            border-right: none;
+            background: white;
+            padding:14px;
+            padding-bottom: 15px;
+        }
+        .slider ul li .ewm::before{
+            content:"";
+            width: 0;
+            height: 0;
+            border:12px solid transparent;
+            border-left:12px solid white;
+            position: absolute;
+            right: 15px;
+            top: 53px;
+            z-index: 1;
+        }
+        .slider ul li .ewm::after{
+            content:"";
+            width: 0;
+            height: 0;
+            border:14px solid transparent;
+            border-left:14px solid #dddddd;
+            position: absolute;
+            right: 11px;
+            top: 51px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+   <div class="w">
+       <div class="nav fr">
+           <ul>
+               <li><a href="#"><span class="wei"></span>微信登录 </a></li>
+               <li><a href="#"><span class="qq"></span>QQ登录 </a></li>
+               <li><a href="#">登录</a></li>
+               <li><a href="#">注册 </a></li>
+               <li class="drop">
+                   <a href="#"><span class="star"></span>我的收藏</a>
+                   <div class="down">
+                       <a href="#">收藏宝贝</a>
+                       <a href="#">收藏店铺</a>
+                   </div>
+               </li>
+               <li><a href="#"><span class="che"></span>我的购物车 </a></li>
+               <li><a href="#"><span class="item"></span>我的订单 </a></li>
+               <li class="drop"><a href="#">帮助中心<span class="help"></span> </a>
+                   <div class="down">
+                       <a href="#">买家服务</a>
+                       <a href="#">商家服务</a>
+                       <a href="#">规则中心</a>
+                   </div>
+               </li>
+               <li><a href="#" class="last">商家后台</a></li>
+           </ul>
+       </div>
+   </div>
+</div>
+<div class="content w">
+    <div class="logo fl">
+        <h1>
+            <a href="#">美丽说</a>
+        </h1>
+    </div>
+    <div class="search fl">
+        <div class="top">
+            <span class="current">宝贝</span>
+            <span>店铺</span>
+        </div>
+        <script type="text/javascript">
+        var ns=document.querySelectorAll(".search .top span");
+        for(var i=0;i<ns.length;i++){
+            ns[i].onclick=function(){
+                for (var j=0;j<ns.length;j++){
+                    ns[j].removeAttribute("class");
+            }
+            this.className="current";
+
+            }
+        }
+        </script>
+
+        <div class="middle">
+            <input type="text">
+            <span></span>
+        </div>
+       <div class="bottom">
+           <ul>
+               <li><a href="#" class="red">连衣裙</a></li>
+               <li><a href="#">运动鞋</a></li>
+               <li><a href="#" class="red">雪纺衫</a></li>
+               <li><a href="#" class="red">衬衫</a></li>
+               <li><a href="#">薄外套</a></li>
+               <li><a href="#">T恤</a></li>
+               <li><a href="#">套装</a></li>
+               <li><a href="#">牛仔裤</a></li>
+               <li><a href="#" class="red">小白鞋</a></li>
+               <li><a href="#">风衣</a></li>
+               <li><a href="#" class="red">绑带凉鞋</a></li>
+               <li><a href="#">粗跟单鞋</a></li>
+           </ul>
+       </div>
+    </div>
+    <div class="photo fr">
+        <img src="images/meilishuo_app.gif" alt="">
+    </div>
+</div>
+<div class="main_nav">
+    <div class="w">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">上衣</a></li>
+            <li><a href="#">裙子</a></li>
+            <li><a href="#">裤子</a></li>
+            <li><a href="#">女鞋</a></li>
+            <li><a href="#">包包</a></li>
+            <li><a href="#">配饰</a></li>
+            <li><a href="#">美妆</a></li>
+            <li><a href="#">男友</a></li>
+            <li><a href="#">童装</a></li>
+            <li><a href="#">家居</a></li>
+        </ul>
+    </div>
+</div>
+    <script tye="text/javascript">
+    // var jzu=document.querySelector(".main_nav");
+    // console.log(jzu);
+    // var main_nav_top=jzu .offsetTop;
+    // window.addEventListener("scroll",function(){
+    //     if (window.pageYOffset<=main_nav_top){
+    //        jzu.removeAttribute("style"); 
+    //     }else{
+    //         jzu.style.position="fixed";
+    //     }
+    // })
+    
+    </script>
+<div class="banner w">
+    <img src="images/prev.png" class="arrow_left">
+    <img src="images/next.png" class="arrow_right">
+    <ul class="ul1">
+        <li><a href="javascript:;"><img src="images/banner01.jpg"></a></li>
+        <li><a href="javascript:;"><img src="images/banner02.jpg"></a></li>
+        <li><a href="javascript:;"><img src="images/banner03.jpg"></a></li>
+        <li><a href="javascript:;"><img src="images/banner04.jpg"></a></li>
+        <li><a href="javascript:;"><img src="images/banner05.jpg"></a></li>
+        <li><a href="javascript:;"><img src="images/banner06.jpg"></a></li>
+    </ul>
+    <ul class="ul2">
+        <!-- <li class="now"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li> -->
+    </ul>
+</div>
+    <script src="js/animated.js"></script>
+    <script>
+    var lbutu = document.querySelector(".banner");
+    var bannerWidth = lbutu.offsetWidth;
+        // 获取左按钮
+        var ann = document.querySelector(".arrow_left");
+        // 获取右按钮
+        var annr = document.querySelector(".arrow_right");
+        // 1. 鼠标经过轮播图模块，左右按钮显示，离开隐藏左右按钮
+        lbutu.onmouseenter = function(){
+            ann.style.display  = "block";
+            annr.style.display = "block";
+            // 停止定时器
+            clearInterval(timer);
+            // 清除定时器变量
+            timer = null;
+        }
+        lbutu.onmouseleave = function(){
+            ann.style.display  = "none";
+            annr.style.display = "none";
+
+            // 重新开启定时器,不要加var
+            if( timer ==  null){
+                timer = setInterval(function(){
+                    annr.click();
+                },2000);
+            }
+        }
+        // 获取.banner ul对象
+        var hq     = document.querySelector(".banner .ul1");
+        console.log(hq);
+        // 获取具有.circled的ol对象
+        var fo = document.querySelector(".banner .ul2");
+        console.log(fo);
+        for(var i=0;i<hq.children.length;i++){
+            // 创建li标签
+            var li = document.createElement("li");
+            li.setAttribute("index",i);
+            li.onclick = function(){
+                for(var j=0; j<fo.children.length ;j++){
+                    fo.children[j].removeAttribute("class");
+                }
+                this.setAttribute("class","current");
+                var index = this.getAttribute("index");
+                // 当我们点击了ol中某个小li 我们就要把这个li的索引号给num变量
+                num = index;
+                circle = index;
+                animated(hq,-index*bannerWidth);
+            }
+                fo.appendChild(li);
+            }
+                fo.children[0].className = "current";
+                // 声明一个变量
+                var num = 0;
+                var circle = 0;
+                // 6.克隆第一个li,包括里面的子节点也要克隆 放到 ul最后面
+                var first = hq.children[0].cloneNode(true);
+                hq.appendChild(first);
+                hq.style.width = hq.children.length*100+"%";
+                // flag 节流阀
+                var flag = true;
+                annr.onclick = function(){
+        	    if(flag){
+        		flag = false;// 关闭节流阀
+        		// 如果走到了最后复制的一张图片,此时我们的ul要快速复原,left改为0
+                if(num == hq.children.length-1){
+                    hq.style.left = 0;
+                    num = 0;
+                }
+                num++;
+                animated(hq,-num*1200,function(){
+                	flag = true;// 动画执行完毕以后,打开节流阀
+                });
+                circle++;
+                if(circle == fo.children.length){
+                    circle = 0;
+                }
+                circleChange();
+            }
+        }
+        // 左侧按钮
+        ann.onclick = function(){
+            if(flag){
+                flag = false;
+                if(num == 0){
+                    num = hq.children.length-1;
+                    hq.style.left =  -num * bannerWidth + "px";
+                }
+                num--;
+                animated(hq,-num*bannerWidth,function(){
+                    flag = true;
+                });
+                circle--;
+               if(circle < 0 ){
+                    circle = fo.children.length-1;
+                }
+                circleChange();
+            }
+        }
+    // 小圆点变化的函数
+        function circleChange(){
+        for(var k = 0;k<fo.children.length; k++){
+            fo.children[k].removeAttribute("class");
+            }
+            fo.children[circle].setAttribute("class","current");
+        }
+        // 自动播放轮播图
+        var timer = setInterval(function(){
+            // 手动调用点击事件
+                annr.click();
+        },2000);
+    
+    
+    
+    </script>
+
+<div class="banner_bottom w">
+    <ul>
+        <li><a href="#"><img src="images/kinds01.png" title="今日新品"></a></li>
+        <li><a href="#"><img src="images/kinds02.png" title="热销单价"></a></li>
+        <li><a href="#"><img src="images/kinds03.png" title="每日特价"></a></li>
+        <li><a href="#"><img src="images/kinds04.png" title="好物专题"></a></li>
+    </ul>
+</div>
+<div class="picture w">
+    <div class="title">
+        <div class="title_l">
+            <a href="javascript:;" class="title_two currentA">今<span class="line currentSpan">日新</span>品</a>
+            <a href="javascript:;" class="title_two">一<span class="line">周热</span>销</a>
+            <a href="javascript:;" class="fr">查看更多></a>
+        </div>
+    </div>
+    <ul class="big">
+        <li class="bigAll">
+            <ul>
+                <li>
+                    <a href="#"><img src="images/goods01.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods02.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods03.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods04.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods05.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods06.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods07.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods08.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods09.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods10.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <li class="bigAll" style="display: none;">
+            <ul>
+                <li>
+                    <a href="#"><img src="images/goods11.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods12.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods13.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods14.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods15.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods16.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods17.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods18.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods19.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+                <li>
+                    <a href="#"><img src="images/goods20.png" alt=""></a>
+                    <div class="info">
+                        <p class="price fl">93.75</p>
+                        <p class="collent fr">250</p>
+                    </div>
+                    <div class="desc">
+                        小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+   
+</div>
+    <script>
+        var xp=document.querySelectorAll(".picture .title_two ");
+        var zx=document.querySelectorAll(".picture .bigAll");
+        var line=document.querySelectorAll(".line");
+
+        for(var i=0;i<xp.length;i++){
+            xp[i].setAttribute("index",i);
+            xp[i].onclick=function(){
+                for(var j=0;j<xp.length;j++){
+                    xp[j].removeAttribute("class");
+                    line[j].removeAttribute("class");
+                    zx[j].style.display="none";
+                }
+                // this.className="bigAll";
+                this.className="currentA";
+                zx[this.getAttribute("index")].style.display="block";
+                line[this.getAttribute("index")].className="currentSpan"
+
+            }
+        }
+    </script>
+<div class="picture1 w">
+    <div class="title_hao">
+        <a href="#" class="fr">查看更多></a>
+        <h2>好物组货</h2>
+    </div>
+    <ul>
+          <li>
+                <a href="#">
+                    <img src="images/newProduct01.png" class="big">
+                    <div class="mark">50款商品</div>
+                </a>
+                <a href="#"><img src="images/dress01.png" class="small"><span>100.00</span></a>
+                <a href="#"><img src="images/dress02.png" class="small"><span>100.00</span></a>
+                <a href="#"><img src="images/dress03.png" class="small"><span>100.00</span></a>
+         </li>
+        <li>
+            <a href="#">
+                <img src="images/newProduct02.png" class="big">
+                <div class="mark">50款商品</div>
+            </a>
+            <a href="#"><img src="images/pants01.png" class="small"><span>100.00</span></a>
+            <a href="#"><img src="images/pants02.png" class="small"><span>100.00</span></a>
+            <a href="#"><img src="images/pants03.png" class="small"><span>100.00</span></a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="images/newProduct03.png" class="big">
+                <div class="mark">50款商品</div>
+            </a>
+            <a href="#"><img src="images/shoes01.png" class="small"><span>100.00</span></a>
+            <a href="#"><img src="images/shoes02.png" class="small"><span>100.00</span></a>
+            <a href="#"><img src="images/shoes03.png" class="small"><span>100.00</span></a>
+        </li>
+    </ul>
+</div>
+<div class="footer">
+    <div class="w">
+        <div class="footer_top">
+            <div class="footer_l">
+                <dl>
+                    <dt>
+                        <h2>买家帮助</h2>
+                    </dt>
+                    <dd><a href="#">新手指南</a></dd>
+                    <dd><a href="#">服务保障</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                    <dd><a href="#">风险监测</a></dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <h2>商家帮助</h2>
+                    </dt>
+                    <dd><a href="#">供货商招募</a></dd>
+                    <dd><a href="#">商家后台</a></dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <h2>关于我们</h2>
+                    </dt>
+                    <dd><a href="#">关于美丽说</a></dd>
+                    <dd><a href="#">联系我们</a></dd>
+                </dl>
+                <dl class="tu">
+                    <dt>
+                        <h2>关注我们</h2>
+                    </dt>
+                    <dd><a href="#" class="xl"><span></span>新浪微博</a></dd>
+                    <dd><a href="#" class="qq"><span></span>QQ空间</a></dd>
+                    <dd><a href="#" class="tx"><span></span>腾讯微博</a></dd>
+                </dl>
+            </div>
+            <div class="footer_r">
+                <div class="tu1 fl">
+                    <h2>美丽说微信服务号</h2>
+                    <img src="images/weixin-server-qrcode.jpg" alt="">
+                </div>
+                <div class="tu2 fr">
+                    <h2>美丽说客户端下载</h2>
+                    <img src="images/meili-app-qrcode.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <p>Copyright ©2017 xxxxxxxx.com 电信与信息服务业务经营许可证xxxxxx号 经营性网站备案信息</p>
+            <p>京ICP备xxxxxxxx号 京公网安备xxxxxxxx 客服电话：xxxx-xxx-xxx
+                文明办网文明上网举报电话：xxx-xxxxxxxx 违法不良信息举报中心</p>
+        </div>
+    </div>
+</div>
+<div class="slider">
+    <ul>
+        <li>
+            <a href="#"><span  class="iconfont">&#xe621;</span>下载<div class="app">APP</div></a>
+            <div class="ewm">
+                <a href="#">
+                    <img src="images/meili-app-qrcode140X140.png">
+                </a>
+            </div>
+        </li>
+        <li><a href="#"><span  class="iconfont">&#xe657;</span>购物车</a></li>
+        <li><a href="#"><span  class="iconfont">&#xe72c;</span>消息</a></li>
+        <li><a href="#"><span  class="iconfont">&#xe639;</span>优惠券</a></li>
+        <li><a href="#"><span  class="iconfont">&#xe610;</span>收藏</a></li>
+        <li><a href="#"><span  class="iconfont">&#xe638;</span>足迹</a></li>
+        <li class="backup" style="display: none;"><a  href="javascript:;"><span class="iconfont">&#xe633;</span></a></li>
+    </ul>
+</div>
+    <script type="text/javascript">
+        var kz=document.querySelector(".backup");
+        console.log(kz);
+        window.addEventListener("scroll",function(){
+            if(window.pageYOffset>0){
+                kz.style.display="block";
+            }else{
+                kz.style.display="none";
+            }
+        })
+        kz.onclick=function(){
+            oanimate_scrll(window,0);
+
+            
+        }
+</script>
+
+
+
+
+    
+</body>
+</html>
