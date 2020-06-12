@@ -1,0 +1,9 @@
+<!--components/channel/channel.wxml-->
+<view class="box">
+	<view class="card" wx:for="{{channelData}}" wx:key="index">
+		<navigator bindtap="aclick" url="/pages/postList/postList?cateid={{item.cateid}}&tab={{item.tab}}&catename={{item.catename}}">
+			<image class="img" src="{{item.icon}}" mode="widthFix"></image>
+		</navigator>
+		<view class="type">#{{item.catename}}#</view>
+	</view>
+</view>

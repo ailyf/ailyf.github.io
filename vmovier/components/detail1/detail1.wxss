@@ -1,0 +1,180 @@
+/* components/Detail/Detail.wxss */
+.detail{
+  margin-top: 490rpx;
+}
+.likeImg-box{
+  width:48rpx;
+  height:48rpx;
+  background-color: red;
+  /* position:fixed;
+  top: 50rpx;
+  right: 30rpx;
+  z-index: 5; */
+}
+.likeImg{
+  width: 100%;
+  vertical-align: middle;
+}
+.goback{
+  position: fixed;
+  top: 100rpx;
+  left: 30rpx;
+  z-index: 5;
+}
+.video{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+.videoTitle{
+  /* width: 100%; */
+  padding:0 40rpx 0 40rpx;
+  font-size: 36rpx;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+.mode-dt{
+  text-align: center;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 28rpx;
+  color: rgba(116, 115, 115, 0.699) ;
+}
+.content{
+  padding: 0 30rpx;
+  font-size: 32rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  height: auto;
+}
+.read{
+  text-align: center;
+  color: skyblue;
+  margin: 40rpx 0;
+}
+.bigbox{
+  border-top: 2rpx solid #f5f5f5;
+  border-bottom: 2rpx solid #f5f5f5;
+  padding-bottom: 40rpx;
+}
+.morebox{
+  padding-top: 40rpx;
+  /* overflow-x: auto; */
+}
+.modeInfo{
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.name{
+  float: left;
+  color: black;
+  font-weight: bold;
+  margin-left: 30rpx;
+}
+.more{
+  float: right;
+  margin-right: 30rpx;
+  color: rgba(116, 115, 115, 0.699) ;
+}
+.info{
+  position: absolute;
+  bottom:0;
+  left: 0;
+  padding: 0 30rpx 20rpx 20rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: white;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+}
+.theTitle{
+  font-weight: bold;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+}
+.duration{
+  font-size: 24rpx;
+  overflow: hidden;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view_H .card{
+  display: inline-block;
+  width: 43%;
+  margin-right: 15px;
+  position: relative;
+}
+.scroll-view_H .card:first-of-type {
+  margin-left: 15px;
+}
+
+.scroll-view_H .card .todetail image{
+width: 100%;
+}
+.commment{
+  padding: 40rpx 30rpx 20rpx;
+}
+.totalComment{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: black;
+}
+.commentItem{
+  border-bottom: 2rpx solid #f5f5f5;
+  padding: 30rpx 0;
+  overflow: hidden;
+}
+.avatar{
+  float: left;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+	vertical-align: middle;
+}
+.allInfo{
+  float: left;
+  width: calc(100% - 60rpx);
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.top{
+  overflow: hidden;
+}
+.preInfo{
+  float: left;
+}
+.username{
+  font-size: 28rpx;
+  color: rgba(116, 115, 115, 0.699) ;
+}
+.time{
+  font-size: 24rpx;
+  color: rgba(109, 105, 105, 0.144);
+}
+.likes{
+  float: right;
+  margin-top: 10rpx;
+}
+.like{
+  margin-left: 14rpx;
+  color: #dedede;
+  padding-top: -10rpx;
+  color: #a6a09d; 
+}
+.likesIcon{
+  vertical-align: middle;
+}
+.commentContent{
+  color: rgb(39, 38, 38);
+  height: auto;
+  line-height: 70rpx;
+  margin-top: 10rpx;
+}
+

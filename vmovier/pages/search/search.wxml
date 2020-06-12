@@ -1,0 +1,20 @@
+<view class="search">
+	<!-- <van-search value="{{ value }}" placeholder="请输入搜索关键词" /> -->
+	<van-search color="thite" placeholder="请输入搜索关键词" bind:search="onSearch" model:value="{{value}}" bind:cancel="onCancel" show-action />
+</view>
+
+<view>
+<block wx:if="{{showHot==true}}">
+	<view class="Search-box">
+		<view class="hotSearch-box">
+			<view class="hotSearch">热门搜索</view>
+			<view class="hotSearch-item">
+				<view class="item" data-kw="{{item.kw}}" wx:for="{{searchData.recommend_keywords}}" wx:key="index" bindtap="searchHot">{{item.kw}}</view>
+			</view>
+		</view>
+	</view>
+</block>
+<block  wx:else>
+ <card items="{{mySearchDate.result.list}}" hidetitle="true"></card>
+</block>
+</view>

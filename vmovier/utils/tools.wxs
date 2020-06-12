@@ -1,0 +1,16 @@
+var formatTime = function(dt) {
+  var m = parseInt(dt / 60000) > 10 ? parseInt(dt / 60000) : '0' + parseInt(dt / 60000);
+  var s = dt % 60 > 10 ? dt % 60 : '0' + dt % 60;
+  return m + "'" + s + '"'
+}
+
+var formatPostTime = function(dt) {
+  var m = parseInt(dt / 60) > 10 ? parseInt(dt / 60) : '0' + parseInt(dt / 60);
+  var s = dt % 60 > 10 ? dt % 60 : '0' + dt % 60;
+  return m + "'" + s + '"'
+}
+
+module.exports = {
+  formatTime: formatTime,
+  formatPostTime:formatPostTime
+};

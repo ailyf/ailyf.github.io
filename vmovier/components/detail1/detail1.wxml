@@ -1,0 +1,63 @@
+<!--components/Detail/Detail.wxml-->
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view class="detail">
+	<van-icon class="goback" name="arrow-left" bindtap="onClick" color="white" size="18" />
+	<!-- <view class="likeImg-box">
+		<image wx:if="{{isLike!==true}}" class="likeImg" mode="widthFix" src="cloud://ccjz.6363-ccjz-1301919728/home/default_like.png" bindtap="toggleLike"></image>
+		<image wx:else class="likeImg" mode="widthFix" src="cloud://ccjz.6363-ccjz-1301919728/home/like.png" bindtap="toggleLike"></image>
+	</view> -->
+	<video id="myVideo" poster="{{detailData.image}}" object-fit="fill" src="http://api.kele8.cn/pic/{{detailData.content_video[0].progressive[3].url}}" enable-danmu danmu-btn controls class="video"></video>
+
+	<view class="videoTitle">{{detailData.title}}</view>
+
+	<view class="mode-dt">
+		<text>{{detailData.cate}}</text> /
+		<text>{{tools.formatPostTime(detailData.duration)}}</text>
+	</view>
+	<view>
+		<view class="content">{{detailData.intro}}</view>
+		<!-- <navigator class="read">
+			<view>阅读全文→</view>
+		</navigator> -->
+	</view>
+	<view class="bigbox">
+		<view class="morebox" wx:for="{{detailData.relate_video}}" wx:key="index">
+			<view class="modeInfo">
+				<text class="name">{{item.name}}</text>
+				<!-- <text class="more">more</text> -->
+			</view>
+
+			<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll">
+				<view class="card" wx:for="{{item.list}}" wx:for-index="idx" wx:for-item="card" wx:key="idx">
+					<navigator class="todetail" url="/pages/postListDetail/postListDetail?postid={{card.postid}}">
+						<image mode="widthFix" src="{{card.image}}"></image>
+					</navigator>
+					<view class="info">
+						<view class="duration">{{tools.formatPostTime(card.duration)}}</view>
+						<view class="theTitle">{{card.title}}</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+	<!-- 评论 -->
+	<view class="commment">
+		<view class="totalComment">{{detailData.comment.total}}条评论</view>
+		<view class="commentItem" wx:for="{{detailData.comment.list}}" wx:key="index">
+			<image class="avatar" src="{{item.userinfo.avatar}}"></image>
+			<view class="allInfo">
+				<view class="top">
+					<view class="preInfo">
+						<view class="username">{{item.userinfo.username}}</view>
+						<view class="time">{{item.addtime}}</view>
+					</view>
+					<view class="likes">
+						<van-icon class="likesIcon fl" name="good-job-o" size="22" color="#a6a09d" />
+						<text class="like fl">{{item.count_approve}}</text>
+					</view>
+				</view>
+				<view class="commentContent">{{item.content}}</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,14 @@
+<!--components/tabbar/tabbar.wxml-->
+<view class="tabbar">
+	<van-nav-bar bind:click-right="onSearch" bind:click-left="onGetDayCover">
+		<van-icon size="18" class="date"  name="cloud://ccjz.6363-ccjz-1301919728/home/test.png" slot="left" />
+		<van-icon size="18" name="search" class="search" slot="right" />
+		<text class="iconfont icon-rili icon" slot="left"></text>
+		<van-tabs active="0" slot="title" bind:click="onClick" color="#2e2e2e">
+			<van-tab title="发现" name="0"></van-tab>
+			<van-tab title="频道" name="1"></van-tab>
+			<!-- <van-tab title="记录" name="2"></van-tab> -->
+		</van-tabs>
+	</van-nav-bar>
+	<slot></slot>
+</view>

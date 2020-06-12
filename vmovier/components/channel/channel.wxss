@@ -1,0 +1,22 @@
+/* components/channel/channel.wxss */
+.box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  width: 50%;
+  position: relative;
+}
+.img{
+  max-width: 376rpx;
+  flex-grow: 1;
+  filter: brightness(0.7);
+}
+.type{
+  color: white;
+  position: absolute;
+  top: 164rpx;
+  left: 131.97rpx;
+  font-size: large;
+  font-weight: 600;
+}

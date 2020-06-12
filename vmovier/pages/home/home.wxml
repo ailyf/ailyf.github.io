@@ -1,0 +1,37 @@
+<!--pages/home/home.wxml-->
+<block wx:if="{{showDate}}">
+		<view class="date" animation="{{animation2}}">
+			<image class="dateImg" src="{{dayCover.image_blurred}}" mode="widthFix"></image>
+			<van-icon class="hiddenDate" name="cross" size="22" color="white" bindtap="hiddenDate" />
+			<view class="content-box">
+				<view class="mask-box">
+					<view class="img-box">
+						<image class="clearImg" src="{{dayCover.image}}" mode="widthFix"></image>
+						<view class="date-info">
+							<view class="day">{{dayCover.time.day}}</view>
+							<view class="line"></view>
+							<view class="month-week">
+								<view class="month">{{dayCover.time.month}}</view>
+								<view class="week">{{dayCover.time.week}}</view>
+							</view>
+						</view>
+					</view>
+					<view class="aircle-box">
+						<view class="date-title">{{dayCover.title}}</view>
+						<view class="date-content">{{dayCover.content}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+</block>
+
+<block wx:else>
+	<tabbar bindtabtoggle="tabtoggle" bindgetDayCover="getDayCover" animation="{{animation1}}">
+		<block wx:if="{{tabIndex == 0}}">
+			<find class="op" findData="{{findData}}"></find>
+		</block>
+		<block wx:elif="{{tabIndex == 1}}">
+			<channel channelData="{{channelData}}"></channel>
+		</block>
+	</tabbar>
+</block>

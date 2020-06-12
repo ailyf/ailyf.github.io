@@ -1,0 +1,19 @@
+/* components/find/find.wxss */
+.bannerImg{
+	width: 100%;
+}
+swiper{
+	width: 750rpx;
+	height: 422rpx;
+}
+.zt{
+	width: 750tpx;
+	height: 468rpx;
+}
+.title{
+	height: 100rpx;
+	background-color: #000;
+	color: white;
+	line-height: 100rpx;
+	text-align: center;
+}

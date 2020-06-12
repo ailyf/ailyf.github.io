@@ -1,0 +1,7 @@
+/* pages/postList/postList.wxss */
+.goback{
+  position: absolute;
+  top:100rpx;
+  left: 40rpx;
+  z-index: 7;
+}

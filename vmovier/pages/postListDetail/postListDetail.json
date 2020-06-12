@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "detail1":"../../components/detail1/detail1"
+  }
+}

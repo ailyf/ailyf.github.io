@@ -1,0 +1,20 @@
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>
+<view class="mode">
+	<view class="title" wx:if="{{hidetitle!=true}}">
+		<slot></slot>
+	</view>
+	<view class="card" wx:for="{{items}}" wx:key="index">
+		<navigator class="navigator" url="/pages/postListDetail/postListDetail?postid={{item.postid}}">
+			<image src="{{item.image}}" class="cardImg" mode="widthFix"></image>
+		</navigator>
+		<view class="info">
+			<view class="style-dt">
+				<text wx:for="{{item.cates}}" wx:key="index">{{item.catename}}</text> /
+				<text wx:if="{{hidetitle==true}}">{{tools.formatPostTime(item.duration)}}</text>
+
+				<text wx:else>{{tools.formatTime(item.duration)}}</text>
+			</view>
+			<view class="them">{{item.title}}</view>
+		</view>
+	</view>
+</view>

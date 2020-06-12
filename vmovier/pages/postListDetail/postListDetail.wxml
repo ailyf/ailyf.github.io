@@ -1,0 +1,2 @@
+<!--pages/postListDetail/postListDetail.wxml-->
+<detail1 detailData="{{detailData}}"></detail1>

@@ -1,0 +1,40 @@
+/* components/tabbar/tabbar.wxss */
+.icon{
+  width: 48rpx;
+  height: 48rpx;
+}
+.van-nav-bar .van-hairline--bottom{
+  background-color: #000;
+  z-index: 9;
+}
+.date{
+  position: absolute;
+  left: 0rpx;
+  top:-23rpx;
+}
+.search{
+  position: relative;
+  right: 0rpx;
+  top:-23rpx;
+}
+
+
+/* .tabbar{
+  margin-top: 100rpx;
+} */
+/* van-nav-bar .van-nav-bar .van-hairline--bottom{
+  margin-top: 40rpx;
+} */
+
+
+/* van-overlay .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+}
+
+.van-tabs .van-tabs__scroll {
+background: black;
+} */

@@ -1,0 +1,28 @@
+<!--components/find/find.wxml-->
+<swiper indicator-dots="true" autoplay="true" interval="2000" duration="500" indicator-color="#bdbdbd" indicator-active-color="#ffffff">
+	<block>
+		<swiper-item wx:for="{{findData.banner.list}}" wx:key="index">
+			 <image class="bannerImg" src="{{item.image}}" mode="widthFix"></image>
+		</swiper-item>
+	</block>
+</swiper>
+<!-- 今日 -->
+<card items="{{findData.today.list}}">{{findData.today.selection_title}}</card>
+
+<!-- 热门 -->
+<card items="{{findData.hot.list}}">{{findData.hot.selection_title}}</card>
+
+<!-- 专题 -->
+<view>
+	<view class="title">专题</view>
+	<swiper class="zt" indicator-dots="true" autoplay="true" interval="2000" duration="500" indicator-color="#bdbdbd" indicator-active-color="#ffffff">
+		<block>
+			<swiper-item wx:for="{{findData.album.list}}" wx:key="index">
+			<navigator url="/pages/postListDetail/postListDetail?postid={{item.postid}}"><image class="bannerImg" src="{{item.image}}" mode="widthFix"></image></navigator>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<!-- May -->
+<card items="{{findData.posts.list}}">{{findData.posts.selection_title}}</card>

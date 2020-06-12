@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar":"../../components/tabbar/tabbar",
+    "find":"../../components/find/find",
+    "channel":"../../components/channel/channel"
+
+  }
+}

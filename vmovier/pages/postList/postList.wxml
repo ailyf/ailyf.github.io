@@ -1,0 +1,6 @@
+<!--pages/postList/postList.wxml-->
+<van-icon class="goback" name="arrow-left" bindtap="onClickLeft" />
+<!-- <van-nav-bar title="{{postListParams.catename}}" left-arrow bind:click-left="onClickLeft" /> -->
+<van-nav-bar title="{{postListParams.catename}}"/>
+
+<card items="{{postListData}}" hidetitle="true"></card>
